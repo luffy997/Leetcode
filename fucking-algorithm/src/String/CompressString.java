@@ -12,8 +12,10 @@ import java.util.*;
 public class CompressString {
     public static void main(String[] args) {
         String S = "abcccccaaa";
-        compressString(S);
+        System.out.println(compressString(S));
+        System.out.println(function(S));
     }
+
 
     public static String compressString(String S){
         // 记录上一个字符出现了几次
@@ -46,6 +48,36 @@ public class CompressString {
         if(res.length() >= S.length()) {
             return S;
         }
+        return res.toString();
+    }
+
+
+    //手写
+    //2021年2月14日 10点12分
+    public static String function(String s){
+
+        StringBuilder res = new StringBuilder();
+        int times = 1;
+        char pre = s.charAt(0);
+
+        for (int i = 1; i < s.length(); i++) {
+            char cur = s.charAt(i);
+            if (cur == pre){
+                times ++;
+            }else {
+                res.append(pre).append(times);
+                pre = cur;
+                //把time还原
+                times = 1;
+            }
+        }
+
+        //最后字符串拼接
+        res.append(pre).append(times);
+        if (res.length() >= s.length()){
+            return s;
+        }
+
         return res.toString();
     }
 

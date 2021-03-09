@@ -26,7 +26,7 @@ public class DestCity {
         outlist.add(inlist1);
         outlist.add(inlist2);
         outlist.add(inlist3);
-        System.out.println(outlist);
+       // System.out.println(outlist);
         System.out.println(function(outlist));
     }
 
@@ -78,12 +78,16 @@ public class DestCity {
         Map<String,String> hashMap = new HashMap<>();
         for (List<String> path : paths) {
             hashMap.put(path.get(0),path.get(1));
+            System.out.println(hashMap);
         }
+
         String key = paths.get(0).get(0);
+        System.out.println("key===="+key);
         while(hashMap.containsKey(key)) {
             String value = hashMap.get(key);
             key = value;
         }
         return key;
     }
+
 }

@@ -27,7 +27,7 @@ public class RemoveDuplicates {
         int len = nums.length;
         int i = 0 ;
         for (int j = 1; j < len; j++) {
-            if (nums[j] != nums[1]){
+            if (nums[j] != nums[i]){
                 i++;
                 nums[i] = nums[j];
             }

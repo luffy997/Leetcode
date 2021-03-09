@@ -18,10 +18,10 @@ package String;
  */
 public class ArrayStringsAreEqual {
     public static void main(String[] args) {
-        String[] word1 = {"a","cb"};
-        String[] word2 = {"ab","c"};
-        System.out.println(arrayStringsAreEqual(word1, word2));
-        System.out.println(arrayStringsAreEqual(word1, word2));
+        String[] word1 = {"a","b","c"};
+        String[] word2 = {"a","b","c"};
+      //  System.out.println(arrayStringsAreEqual(word1, word2));
+        System.out.println(function(word1, word2));
     }
 
     /**
@@ -55,6 +55,9 @@ public class ArrayStringsAreEqual {
      * @return
      */
     public static boolean function(String[] word1, String[] word2){
+        //String.join字符串拼接的方法
+        System.out.println(String.join("-", word1));
+        System.out.println(String.join("-", word2));
         return String.join("", word1).toString().equals(String.join("", word2));
     }
 }
